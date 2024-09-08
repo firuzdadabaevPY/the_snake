@@ -57,7 +57,7 @@ class GameObject:
 
 
 class Apple(GameObject):
-    """Этот класс - шаблок яблоки, с атрибутами объекта и его методами"""
+    """Этот класс - шаблок яблоки, с атрибутами объекта и его методами."""
 
     def __init__(self) -> None:
         super().__init__()
@@ -107,13 +107,13 @@ class Snake(GameObject):
         return self.positions[0]
 
     def update_direction(self):
-        """В этом методе, мы меняем направление, если оно есть от игрока"""
+        """В этом методе, мы меняем направление, если оно есть от игрока."""
         if self.next_direction:
             self.direction = self.next_direction
             self.next_direction = None
 
     def move(self):
-        """Метод описывает, работу змеи"""
+        """Метод описывает, работу змеи."""
         self.last = self.positions[-1]
         head_position = self.get_head_position()
 
@@ -128,7 +128,7 @@ class Snake(GameObject):
 
     # Метод draw класса Snake
     def draw(self):
-        """Этот метод, предоставляет графический интерфейс для змеи"""
+        """Этот метод, предоставляет графический интерфейс для змеи."""
         for position in self.positions[:-1]:
             rect = (pygame.Rect(position, (GRID_SIZE, GRID_SIZE)))
             pygame.draw.rect(screen, self.body_color, rect)
@@ -146,7 +146,7 @@ class Snake(GameObject):
 
 
 def handle_keys(game_object):
-    """Этот метод, предоставляет, возможности влияние на объекты"""
+    """Этот метод, предоставляет, возможности влияние на объекты."""
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
@@ -163,7 +163,7 @@ def handle_keys(game_object):
 
 
 def main():
-    """Здесь главная часть программы, с логикой"""
+    """Здесь главная часть программы, с логикой."""
     # Инициализация PyGame:
     pygame.init()
     # Тут нужно создать экземпляры классов.
