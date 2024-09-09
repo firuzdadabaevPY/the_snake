@@ -58,7 +58,7 @@ class GameObject:
 class Apple(GameObject):
     """Этот класс - шаблок яблоки, с атрибутами объекта и его методами."""
 
-    def __init__(self, pos) -> None:
+    def __init__(self, pos=None) -> None:
         super().__init__()
         self.position = self.randomize_position(pos)
         self.body_color = APPLE_COLOR
@@ -78,7 +78,7 @@ class Apple(GameObject):
                 (randint(0, GRID_HEIGHT - 1) * GRID_SIZE)
             )
 
-            if new_pos not in pos:
+            if pos is None or new_pos not in pos:
                 return new_pos
 
 
